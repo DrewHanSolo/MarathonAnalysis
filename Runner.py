@@ -1,5 +1,5 @@
 class Runner(object):
-	def __init__(self, int_place, string_div_total, string_name, int_num, int_age, string_hometown, time_secs_gun, time_secs_net, time_secs_pace, enum_sex):
+	def __init__(self, int_place, string_div_total, int_num, string_name, int_age, string_hometown, time_secs_gun, time_secs_net, time_secs_pace, enum_sex):
 		self.int_place = int_place
 		self.string_div_total = string_div_total
 		self.int_num = int_num
@@ -27,7 +27,7 @@ class Runner(object):
 				self.int_age, self.string_hometown, self.time_secs_gun, self.time_secs_net, self.time_secs_pace, self.enum_sex))
 
 def stringLiteralTimeToSecs(argument):
-	ftr = [3600,60,1]
+	ftr = [60,1,1/60]
 	return int(sum([int(a)*int(b) for a,b in zip(ftr, map(int,str(argument).split(':')))]))
 
 def col_sanitizer(columnIndex, argument):

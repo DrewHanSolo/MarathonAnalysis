@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as P
 import Analysis
 
-SAVE_PATH = '/mnt/c/Users/Andrew/Desktop/Deloitte/project'
+SAVE_PATH = '/mnt/c/Users/Andrew/Desktop/Deloitte/Analysis'
 
 # constructs new figure with window and figure titles	
 def constructFig(title):
@@ -39,6 +39,21 @@ def plotScatter(title, runners, xProperty, yProperty, **kwargs):
 
 	#plot generation
 	P.scatter(xvalues, yvalues, **kwargs)
+
+	P.show()
+	savePlot(fig, plotTitle)
+	return P
+
+def plotBinData(title, runners, binProperty, dataProperty, bins, **kwargs):
+	#plot info
+	plotTitle = "%s: avgs of %s binned by %s" % (title, dataProperty, binProperty)
+	fig = constructFig(plotTitle)
+			
+	P.xlabel(binProperty)
+	P.ylabel(dataProperty)
+
+	avgs, stdDevs, binCenters = Analysis.getBinData(runners, binProperty, dataProperty, bins)
+	P.errorbar(binCenters, avgs, yerr = stdDevs, **kwargs)
 
 	P.show()
 	savePlot(fig, plotTitle)
