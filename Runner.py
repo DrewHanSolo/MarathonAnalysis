@@ -31,24 +31,21 @@ def stringLiteralTimeToSecs(argument):
 	return int(sum([int(a)*int(b) for a,b in zip(ftr, map(int,str(argument).split(':')))]))
 
 def col_sanitizer(columnIndex, argument):
-	try:
-		if columnIndex == 0:
-			return int(argument)	# int_place
-		if columnIndex == 1:
-			return str(argument)	# string_div_total
-		if columnIndex == 2:
-			return int(argument)	# int_num
-		if columnIndex == 3:
-			return str(argument)	# string_name
-		if columnIndex == 4:
-			return int(argument)	# int_age
-		if columnIndex == 5:
-			return str(argument)	# string_hometown
-		if columnIndex == 6:
-			return stringLiteralTimeToSecs(argument)	# time_secs_gun
-		if columnIndex == 7:
-			return stringLiteralTimeToSecs(argument)	# time_secs_net
-		if columnIndex == 8:
-			return stringLiteralTimeToSecs(argument)	# time_secs_pace
-	except:
-		return "N/A"
+	if columnIndex == 0:
+		return int(argument)	# int_place
+	if columnIndex == 1:
+		return str(argument)	# string_div_total
+	if columnIndex == 2:
+		return int(argument)	# int_num
+	if columnIndex == 3:
+		return str(argument)	# string_name
+	if columnIndex == 4:
+		return int(argument)	# int_age
+	if columnIndex == 5:
+		return str(argument)	# string_hometown
+	if columnIndex == 6:
+		return stringLiteralTimeToSecs(argument)	# time_secs_gun
+	if columnIndex == 7:
+		return stringLiteralTimeToSecs(argument)	# time_secs_net
+	if columnIndex == 8:
+		return stringLiteralTimeToSecs(argument)	# time_secs_pace

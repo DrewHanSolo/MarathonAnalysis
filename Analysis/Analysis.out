@@ -1,0 +1,77 @@
+Male Runners:
+  Attribute = time_secs_net
+  Mean = 2497.5459677419353
+  Standard Dev = 1120.3719440651203
+  Median = 2885.5
+  Mode = 60
+  Range = [60, 3597]
+  Count = 1240 
+
+Male Runners:
+  Attribute = int_age
+  Mean = 40.51693548387097
+  Standard Dev = 12.048813499169666
+  Median = 41.0
+  Mode = 44
+  Range = [-1, 78]
+  Count = 1240 
+
+Male Runners time_secs_net difference from time_secs_gun: 378.154032
+Female Runners:
+  Attribute = time_secs_net
+  Mean = 2049.1025369978856
+  Standard Dev = 1514.5146889964299
+  Median = 2934.5
+  Mode = 61
+  Range = [60, 3599]
+  Count = 946 
+
+Female Runners:
+  Attribute = int_age
+  Mean = 36.74841437632135
+  Standard Dev = 9.995459995927902
+  Median = 37.0
+  Mode = 36
+  Range = [0, 74]
+  Count = 946 
+
+Female Runners time_secs_net difference from time_secs_gun: 576.133192
+Male Runners (time_secs_net > 500):
+  Attribute = time_secs_net
+  Mean = 2962.1095100864554
+  Standard Dev = 387.7785119972623
+  Median = 2988.0
+  Mode = 2128
+  Range = [1830, 3597]
+  Count = 1041 
+
+Male Runners (time_secs_net > 500):
+  Attribute = int_age
+  Mean = 39.938520653218056
+  Standard Dev = 11.61064077368713
+  Median = 40.0
+  Mode = 36
+  Range = [-1, 72]
+  Count = 1041 
+
+Male Runners (time_secs_net > 500) time_secs_net difference from time_secs_gun: 451.199808
+Female Runners (time_secs_net > 500):
+  Attribute = time_secs_net
+  Mean = 3176.3830845771145
+  Standard Dev = 306.0706909194426
+  Median = 3226.0
+  Mode = 2886
+  Range = [2102, 3599]
+  Count = 603 
+
+Female Runners (time_secs_net > 500):
+  Attribute = int_age
+  Mean = 35.643449419568825
+  Standard Dev = 9.31005818768364
+  Median = 36.0
+  Mode = 36
+  Range = [10, 64]
+  Count = 603 
+
+Female Runners (time_secs_net > 500) time_secs_net difference from time_secs_gun: 906.228856
+Net time difference of Chris Doe from top 10% runners: 754.466667

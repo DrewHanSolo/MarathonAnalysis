@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as P
 import Analysis
 
-SAVE_PATH = '/mnt/c/Users/Andrew/Desktop/Deloitte/Analysis'
+SAVE_PATH = '/mnt/c/Users/Andrew/Desktop/Deloitte/project/Analysis'
 
 # constructs new figure with window and figure titles	
 def constructFig(title):
@@ -28,7 +28,7 @@ def savePlot(fig, title, extension = '.png'):
 #simple scatter plot of an xProperty against yProperty for runners
 def plotScatter(title, runners, xProperty, yProperty, **kwargs):
 	#plot info
-	plotTitle = "%s: scatterplot of %s vs %s" % (title, xProperty, yProperty)
+	plotTitle = "%s: scatterplot of %s vs %s (%d runners)" % (title, xProperty, yProperty, len(runners))
 	fig = constructFig(plotTitle)
 
 	xvalues = Analysis.getAttributes(runners, xProperty);
@@ -38,7 +38,14 @@ def plotScatter(title, runners, xProperty, yProperty, **kwargs):
 	P.ylabel(yProperty)
 
 	#plot generation
-	P.scatter(xvalues, yvalues, **kwargs)
+	P.scatter(xvalues, yvalues)
+
+	if "markSpecial" in kwargs:
+		specialRunners = kwargs.get("markSpecial")
+		specialColor = "#FF0000"
+		xvalues = Analysis.getAttributes(specialRunners, xProperty);
+		yvalues = Analysis.getAttributes(specialRunners, yProperty);
+		P.scatter(xvalues, yvalues, color=specialColor)
 
 	P.show()
 	savePlot(fig, plotTitle)
@@ -46,7 +53,7 @@ def plotScatter(title, runners, xProperty, yProperty, **kwargs):
 
 def plotBinData(title, runners, binProperty, dataProperty, bins, **kwargs):
 	#plot info
-	plotTitle = "%s: avgs of %s binned by %s" % (title, dataProperty, binProperty)
+	plotTitle = "%s: avgs of %s binned by %s (%d runners)" % (title, dataProperty, binProperty, len(runners))
 	fig = constructFig(plotTitle)
 			
 	P.xlabel(binProperty)
